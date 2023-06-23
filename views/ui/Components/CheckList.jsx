@@ -1,4 +1,4 @@
-import {useContext,useEffect, useState } from "react";
+import {useContext,useEffect, useReducer, useState } from "react";
 import { Authcontext } from "../../../Auth/context/Authcontext";
 import { styled, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow,Paper } from "../../../materialUIConfig";
 import axios from "axios";
@@ -6,7 +6,7 @@ import axios from "axios";
 
 const CheckList = (props) => {
     const { user } = useContext(Authcontext)
-    const {selectedEmpresa,selectedObra,selectedSector,selectedUnidad,selectedCartilla, selectedTarifado,CheckListfun}= props;
+    const {selectedEmpresa,selectedObra,selectedSector,selectedUnidad,selectedCartilla, selectedTarifado,CheckListfun,reduceValue}= props;
     const [dataChecklist, setdataChecklist] = useState('')
     const url= "http://192.168.49.1:200/user/cartllacontrol/tarifado/list"
 
@@ -19,7 +19,7 @@ const CheckList = (props) => {
                     Cartilla:selectedCartilla, Tarifado:selectedTarifado })
                 setdataChecklist(response.data)
             })
-    },[selectedTarifado])
+    },[selectedTarifado,reduceValue])
 
     useEffect(()=>{
         const idsArray=[];

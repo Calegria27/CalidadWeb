@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { InputLabel, MenuItem, FormControl, Select } from "../../../materialUIConfig";
 import axios from "axios";
 
@@ -13,6 +13,7 @@ const DropdownTarifado = (props) => {
             .then((response) => {
                 setDataTarifado(response.data)
             })
+        tarifadofun(null)
     }, [selectedCartilla])
 
     const handleChange = (event) => {

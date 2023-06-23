@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useReducer, useState } from "react";
 import { Button, Container } from "../materialUIConfig";
 import { Authcontext } from "../Auth/context/Authcontext";
 import DropdownEmpresa from "../views/ui/Components/DropdownEmpresa"
@@ -8,10 +8,8 @@ import DropdownControl from "./ui/Components/DropdownControl";
 import DropdownTarifado from "./ui/Components/DropdownTarifado";
 import CheckList from "./ui/Components/CheckList";
 import axios from "axios";
-import { borders } from '@mui/system';
 
 const MainView = () => {
-
     const { user } = useContext(Authcontext)
     const [selectedEmpresa, setSelectedEmpresa] = useState(null);
     const [selectedObra, setSelectedObra] = useState(null);
@@ -21,34 +19,60 @@ const MainView = () => {
     const [selectedCartilla, setSelectedCartilla] = useState(null);
     const [selectedTarifado, setSelectedTarifado] = useState(null);
     const [dataApprove, setDataApprove] = useState([]);
+    const [reduceValue, forceUpdate] = useReducer(x => x + 1, 0);
     const url = "http://192.168.49.1:200/user/exec";
+   
 
     const handleEmpresaSelection = (empresa) => {
         setSelectedEmpresa(empresa);
         setSelectedObra(null);
+        setSelectedSector(null)
+        setSelectedUnidad(null)
+        setSelectedModelo(null)
+        setSelectedCartilla(null)
+        setSelectedTarifado(null)
+        setDataApprove([])
     };
 
     const handleObraSelection = (obra) => {
         setSelectedObra(obra);
+        setSelectedSector(null)
+        setSelectedUnidad(null)
+        setSelectedModelo(null)
+        setSelectedCartilla(null)
+        setSelectedTarifado(null)
+        setDataApprove([])
     };
 
     const handleSectorSelection = (sector) => {
         setSelectedSector(sector)
-
+        setSelectedUnidad(null)
+        setSelectedModelo(null)
+        setSelectedCartilla(null)
+        setSelectedTarifado(null)
+        setDataApprove([])
     }
 
     const handleUnidadSelection = (unidad) => {
         setSelectedUnidad(unidad)
+        setSelectedModelo(null)
+        setSelectedCartilla(null)
+        setSelectedTarifado(null)
+        setDataApprove([])
     }
 
     const handleModeloSelection = (modelo) => {
         setSelectedModelo(modelo)
+        setSelectedCartilla(null)
+        setSelectedTarifado(null)
+        setDataApprove([])
     }
 
     const updateData = (data) => {
         for (const aprobacion of data){
             console.log( {Id: aprobacion[0].toString(), User: aprobacion[1], Estado: aprobacion[2].toString()})
             axios.post(url, { Id: aprobacion[0].toString(), User: aprobacion[1], Estado: aprobacion[2].toString()})
+            forceUpdate();
         }
     }
 
@@ -72,13 +96,14 @@ const MainView = () => {
             }
             {selectedCartilla &&
                 <DropdownTarifado selectedEmpresa={selectedEmpresa} selectedObra={selectedObra} selectedSector={selectedSector}
-                    selectedUnidad={selectedUnidad} selectedCartilla={selectedCartilla} tarifadofun={setSelectedTarifado} />
+                    selectedUnidad={selectedUnidad} selectedCartilla={selectedCartilla}  tarifadofun={setSelectedTarifado} />
             }
             {selectedTarifado &&
                 <Container component="main" maxWidth="lg" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
                     <h1>Detalle Checklist Control Calidad</h1>
                     <CheckList selectedEmpresa={selectedEmpresa} selectedObra={selectedObra} selectedSector={selectedSector}
-                        selectedUnidad={selectedUnidad} selectedCartilla={selectedCartilla} selectedTarifado={selectedTarifado} CheckListfun={setDataApprove} />
+                        selectedUnidad={selectedUnidad} selectedCartilla={selectedCartilla} selectedTarifado={selectedTarifado} CheckListfun={setDataApprove}
+                        reduceValue={reduceValue} />
                     {dataApprove.length>0 &&
                         <Button sx={{ ml: 65, m: "auto", mt: 3 }} variant="contained" color='success' onClick={() => updateData(dataApprove)}>
                             Aprobar Partida
