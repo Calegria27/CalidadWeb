@@ -16,10 +16,7 @@ export default function Login() {
 
   const baseUrl = "http://192.168.49.1:200";
 
-  const [form, setForm] = useState({
-    UsuCuenta: '',
-    UsuPass: ''
-  })
+
 
   const onlogin = (user) => {
     login(user);
@@ -45,7 +42,8 @@ export default function Login() {
   }
 
   return (
-    <Container component="main" maxWidth="lg">
+    <Container component="main" maxWidth="lg" sx={{backgroundColor:"aliceblue"}}
+    >
       <Box
         sx={{
           marginTop: 25,
@@ -87,9 +85,7 @@ export default function Login() {
                 alignItems: "center",
               }}
             >
-              <Typography component="h1" variant="h5">
-                Login
-              </Typography>
+              <img src="https://www.cindependencia.cl/wp-content//themes/independencia/assets/img/logo-new-independencia.png" width="198.75" height="50" />
               <Box
                 component="form"
                 noValidate
