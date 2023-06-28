@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { Authcontext } from "../context/Authcontext"
 import { Button, CssBaseline, TextField, FormControlLabel, Checkbox, Paper, Box, Grid, Typography, Container } from "../../materialUIConfig";
-import inped from "../../assets/img/inped.jpg";
+import inped from "../../../calidad-ReactJS/src/assets/img/inped.jpg";
 import axios from "axios";
 
 
