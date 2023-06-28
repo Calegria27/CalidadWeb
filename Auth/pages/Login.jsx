@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { Authcontext } from "../context/Authcontext"
 import { Button, CssBaseline, TextField, FormControlLabel, Checkbox, Paper, Box, Grid, Typography, Container } from "../../materialUIConfig";
-import inped from "/home/carlos/Escritorio/proyectos/calidad/calidad-ReactJS/src/assets/indep.jpeg";
+import inped from "../../assets/img/inped.jpg";
 import axios from "axios";
 
 
@@ -14,7 +14,7 @@ export default function Login() {
   const navigate = useNavigate();
 
 
-  const baseUrl = "http://192.168.49.1:200";
+  const baseUrl = "http://192.168.1.16:200";
 
 
 
