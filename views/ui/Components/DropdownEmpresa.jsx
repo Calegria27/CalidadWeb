@@ -8,7 +8,7 @@ const DropdownEmpresa = (props) => {
     const { onEmpresaSelected } = props;
     const {user}= useContext(Authcontext)
     const [empresa, setEmpresa] = useState('')
-    const url = "http://192.168.49.1:200/user/empresas";
+    const url = "http://192.168.1.16:200/user/empresas";
     const [dataempresas, setDataempresas] = useState(null);
 
     useEffect(() => {

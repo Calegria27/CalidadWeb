@@ -7,9 +7,9 @@ const DropdownSector = (props) => {
     const { selectedEmpresa,selectedObra, sectorfun , unidadfun, modelofun} = props;
     const [sector, setSector] = useState('')
     const [unidad, setUnidad] = useState('')
-    const url = "http://192.168.49.1:200/user/empresas/obras/sector";
-    const urlunidad ="http://192.168.49.1:200/user/empresas/obras/sector/ufisica"
-    const urlmodelo ="http://192.168.49.1:200/user/empresas/obras/sector/ufisica/modelo"
+    const url = "http://192.168.1.16:200/user/empresas/obras/sector";
+    const urlunidad ="http://192.168.1.16:200/user/empresas/obras/sector/ufisica"
+    const urlmodelo ="http://192.168.1.16:200/user/empresas/obras/sector/ufisica/modelo"
     const [dataSector, setDataSector] = useState(null);
     const [dataUnidad, setDataUnidad] = useState(null);
     const [modelo, setModelo] = useState(null);

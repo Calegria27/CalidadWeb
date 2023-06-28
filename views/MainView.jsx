@@ -20,7 +20,7 @@ const MainView = () => {
     const [selectedTarifado, setSelectedTarifado] = useState(null);
     const [dataApprove, setDataApprove] = useState([]);
     const [reduceValue, forceUpdate] = useReducer(x => x + 1, 0);
-    const url = "http://192.168.49.1:200/user/exec";
+    const url = "http://192.168.1.16:200/user/exec";
    
 
     const handleEmpresaSelection = (empresa) => {

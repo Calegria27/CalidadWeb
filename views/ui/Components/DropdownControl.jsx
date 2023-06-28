@@ -7,7 +7,7 @@ const DropdownControl = (props) => {
     const {selectedEmpresa,selectedObra,selectedSector,selectedUnidad,selectedModelo,controlfun}= props;
     const [control, setControl] = useState('')
     const [datacontrol, setDataControl] = useState('')
-    const url= "http://192.168.49.1:200/user/cartillacontrol"
+    const url= "http://192.168.1.16:200/user/cartillacontrol"
     
                 
     useEffect(()=>{

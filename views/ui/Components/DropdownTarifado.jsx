@@ -6,7 +6,7 @@ const DropdownTarifado = (props) => {
     const { selectedEmpresa, selectedObra, selectedSector, selectedUnidad, selectedCartilla, tarifadofun } = props
     const [tarifado, setTarifado] = useState('')
     const [dataTarifado, setDataTarifado] = useState('')
-    const url = "http://192.168.49.1:200/user/cartllacontrol/tarifado"
+    const url = "http://192.168.1.16:200/user/cartllacontrol/tarifado"
 
     useEffect(() => {
         axios.post(url, { CtoEmpresa: selectedEmpresa, CtoCodigo: selectedObra, Sector: selectedSector.toString(), uFisica: selectedUnidad.toString(), Cartilla: selectedCartilla })

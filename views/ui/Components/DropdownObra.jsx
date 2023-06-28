@@ -8,7 +8,7 @@ const DropdownObra = (props) => {
     const { selectedEmpresa, obrafun } = props;
     const { user } = useContext(Authcontext)
     const [obra, setObra] = useState('')
-    const url = "http://192.168.49.1:200/user/empresas/obras";
+    const url = "http://192.168.1.16:200/user/empresas/obras";
     const [dataobras, setDataObras] = useState(null);
 
 
@@ -45,7 +45,7 @@ const DropdownObra = (props) => {
             <FormControl sx={{ m: 1, minWidth: 120 }}>
                 <InputLabel id="demo-simple-select-helper-label">Obra</InputLabel>
                 <Select
-                    labelId="Dobra"
+                    labelId="Dobra"x
                     id="Dobra"
                     value={obra}
                     label="obras"
