@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Login from '../Auth/pages/Login';
 import { PrivateRouter } from './PrivateRouter';
 import { PublicRouter } from './PublicRouter';
@@ -18,10 +18,10 @@ export const AppRouter = () => {
 
           
             
-            /* <Route path ="/*" element={
+            <Route path ="/*" element={
             <PrivateRouter>
-              <NavbarRoute/> 
-            </PrivateRouter>}/> */
+              <NavbarRoute/>
+            </PrivateRouter>}/>
 
 
         </Routes>
