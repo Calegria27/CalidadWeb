@@ -8,7 +8,7 @@ const CheckList = (props) => {
     const { user } = useContext(Authcontext)
     const {selectedEmpresa,selectedObra,selectedSector,selectedUnidad,selectedCartilla, selectedTarifado,CheckListfun,reduceValue}= props;
     const [dataChecklist, setdataChecklist] = useState('')
-    const url= "http://192.168.1.16:200/user/cartllacontrol/tarifado/list"
+    const url= "http://190.82.118.130:200/user/cartllacontrol/tarifado/list"
 
     useEffect(()=>{
         CheckListfun([])

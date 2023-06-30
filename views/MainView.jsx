@@ -5,7 +5,7 @@ import DropdownEmpresa from "../views/ui/Components/DropdownEmpresa"
 import DropdownObra from "../views/ui/Components/DropdownObra"
 import DropdownSector from "../views/ui/Components/DropdownSector"
 import DropdownControl from "./ui/Components/DropdownControl";
-import DropdownTarifado from "./ui/Components/DropdownTarifado";
+import DropdownTarifado from "./ui/Components/DropdownTarifado";f
 import CheckList from "./ui/Components/CheckList";
 import axios from "axios";
 
@@ -20,7 +20,7 @@ const MainView = () => {
     const [selectedTarifado, setSelectedTarifado] = useState(null);
     const [dataApprove, setDataApprove] = useState([]);
     const [reduceValue, forceUpdate] = useReducer(x => x + 1, 0);
-    const url = "http://192.168.1.16:200/user/exec";
+    const url = "http://190.82.118.130:200/user/exec";
    
 
     const handleEmpresaSelection = (empresa) => {

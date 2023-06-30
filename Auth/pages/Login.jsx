@@ -13,7 +13,7 @@ export default function Login() {
   const navigate = useNavigate();
 
 
-  const baseUrl = "http://192.168.1.16:200";
+  const baseUrl = "http://190.82.118.130:200";
 
 
 
