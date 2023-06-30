@@ -5,7 +5,7 @@ import DropdownEmpresa from "../views/ui/Components/DropdownEmpresa"
 import DropdownObra from "../views/ui/Components/DropdownObra"
 import DropdownSector from "../views/ui/Components/DropdownSector"
 import DropdownControl from "./ui/Components/DropdownControl";
-import DropdownTarifado from "./ui/Components/DropdownTarifado";f
+import DropdownTarifado from "./ui/Components/DropdownTarifado";
 import CheckList from "./ui/Components/CheckList";
 import axios from "axios";
 
