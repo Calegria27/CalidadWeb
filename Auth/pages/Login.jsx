@@ -41,7 +41,7 @@ export default function Login() {
   }
 
   return (
-    <Container component="main" maxWidth="lg" sx={{backgroundColor:"aliceblue"}}
+    <Container component="main" maxWidth="lg"
     >
       <Box
         sx={{
